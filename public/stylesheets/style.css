@@ -1,8 +1,28 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+:root{
+    --bs-font-sans-serif: 'Roboto', sans-serif;
+}
+
+.container-xxl{
+    max-width: 1530px;
+}
+
+body{
+    background-image: url('https://i.imgur.com/zqtBK0J.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 a {
-  color: #00B7FF;
+    color: var(--bs-dark);
 }
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+  }
+  
+  .login  img {
+    height: 30px;
+  }
