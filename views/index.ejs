@@ -21,16 +21,43 @@
   </div>
 </div>
 
+
 <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
-  <% if(categories != '') { %> <% categories.forEach(function(category, idx){ %>
   <a href="#" class="col text-center category__link">
     <div class="category__img shadow">
-      <img src="/images/<%- category.image %>" alt="category.name" loading="lazy" />
+      <img src="/images/american.jpg" alt="American" loading="lazy" />
     </div>
-    <div class="pt-1">category.name</div>
+    <div class="pt-1">American</div>
   </a>
-  <% }) %> 
-<% } %>
+
+  <a href="#" class="col text-center category__link">
+    <div class="category__img shadow">
+      <img src="/images/armenian.jpg" alt="Armenian" loading="lazy" />
+    </div>
+    <div class="pt-1">Armenian</div>
+  </a>
+
+  <a href="#" class="col text-center category__link">
+    <div class="category__img shadow">
+      <img src="/images/italian.jpg" alt="Italian" loading="lazy" />
+    </div>
+    <div class="pt-1">Italian</div>
+  </a>
+
+  <a href="#" class="col text-center category__link">
+    <div class="category__img shadow">
+      <img src="/images/mexican.jpg" alt="Mexican" loading="lazy" />
+    </div>
+    <div class="pt-1">Mexican</div>
+  </a>
+
+  <a href="#" class="col text-center category__link">
+    <div class="category__img shadow">
+      <img src="/images/persian.jpg" alt="Persian" loading="lazy" />
+    </div>
+    <div class="pt-1">Persian</div>
+  </a>
+
   <a href="/categories" class="col text-center category__link">
     <div class="category__img shadow">
       <img src="/images/american.jpg" alt="More" loading="lazy" />
