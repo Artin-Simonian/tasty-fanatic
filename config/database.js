@@ -9,4 +9,4 @@ db.on('connected', function() {
 });
 
 
-require('../models/categories')
+require('../models/category')

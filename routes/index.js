@@ -4,8 +4,12 @@ const passport = require('passport')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('home', {  categories:[] });
 });
+
+router.get('/submit', function(req, res){
+  res.render('submit')
+})
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
@@ -23,14 +27,14 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/movies',
-    failureRedirect: '/movies'
+    successRedirect: '/',
+    failureRedirect: '/'
   }
 ));
 
 router.get('/logout', function(req, res){
   req.logout(function() {
-    res.redirect('/movies');
+    res.redirect('/');
   });
 });
 
