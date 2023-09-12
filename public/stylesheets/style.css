@@ -1,91 +1,89 @@
-:root{
-    --bs-font-sans-serif: 'Roboto', sans-serif;
+:root {
+  --bs-font-sans-serif: "Roboto", sans-serif;
 }
 
-.container-xxl{
-    max-width: 1530px;
+.container-xxl {
+  max-width: 1530px;
 }
 
-body{
-    background-image: url('https://i.imgur.com/zqtBK0J.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+body {
+  background-image: url("https://i.imgur.com/zqtBK0J.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 a {
-    color: var(--bs-dark);
+  color: var(--bs-dark);
 }
 
 .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 34px;
-  }
-  
-  .login  img {
-    height: 30px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
 
-  #hero-image > img{
-    border-radius: 20%;
-  }
+.login img {
+  height: 30px;
+}
 
-  .category__link{
-    text-align: center;
-    display: block;
-    text-decoration: none;
-    transition: 250ms all;
-  }
+#hero-image > img {
+  border-radius: 20%;
+}
 
-  .category__link:hover{
-    transform: scale(1.1);
-  }
+.category__link {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: 250ms all;
+}
 
-  .category__img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    margin: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    border-radius: 10px;
-  }
+.category__link:hover {
+  transform: scale(1.1);
+}
 
-  .category__img img{
-    width: 100%;
-    object-fit: cover;
-  }
+.category__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border-radius: 10px;
+}
 
-  footer a{
-    text-decoration: none;
-  }
+.category__img img {
+  width: 100%;
+  object-fit: cover;
+}
 
-  footer{
-    text-align: center;
-  }
+footer a {
+  text-decoration: none;
+}
 
-  #header h1{
-    font-size: 5rem;
-  }
+footer {
+  text-align: center;
+}
 
-  #header p{
-    font-size: 2rem;
-  }
+#header h1 {
+  font-size: 5rem;
+}
 
+#header p {
+  font-size: 2rem;
+}
 
+nav a {
+  text-decoration: none;
+  color: #000;
+}
 
- nav a {
-    text-decoration: none;
-    color: #000;
-  }
+nav a:hover {
+  color: blue;
+}
 
-  nav a:hover{
-    color: blue;
-  }
-
-  nav li{
-    list-style: none;
-    display: inline;
-  }
+nav li {
+  list-style: none;
+  display: inline;
+}
