@@ -11,6 +11,10 @@ router.get('/submit', function(req, res){
   res.render('submit')
 })
 
+router.get('/developer', function(req, res){
+  res.render('developer')
+})
+
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?

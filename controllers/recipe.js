@@ -17,3 +17,8 @@ exports.home = async(req, res) => {
 exports.submit = async(req, res) => {
   res.render('submit', { title: 'Submit Recipe'} );
 }
+
+exports.submitPost = async(req, res) => {
+
+  res.redirect('/submit');
+}
