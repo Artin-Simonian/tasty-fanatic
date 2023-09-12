@@ -4,30 +4,28 @@
 
   <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">Submit Recipe</h1>
-    <div class="col-lg-6 mx-auto">
-    </div>
   </div>
 
   <div class="row justify-content-center">
     <div class="col-5">
-      <form action="/submit" enctype="multipart/form-data" method="POST">
+      <form action="/new" enctype="multipart/form-data" method="POST">
         <div class="row g-3">
 
           <div class="col-12">
             <label for="name" class="form-label">Recipe Name</label>
-            <input type="text" name="name" id="name" class="form-control">
+            <input type="text" name="name" id="name" class="form-control" required>
           </div>
 
           <div class="col-12">
             <label for="description" class="form-label">Description</label>
-            <textarea name="description" id="description" class="form-control" cols="30" rows="4"></textarea>
+            <textarea name="description" id="description" class="form-control" cols="30" rows="4" required></textarea>
           </div>
 
           <div class="col-12">
             <label for="name" class="form-label">Ingredients</label><br>
             <div class="ingredientList">
               <div class="ingredeintDiv mb-1">
-                <input type="text" name="ingredients" class="form-control">
+                <input type="text" name="ingredients" class="form-control" required>
               </div>
             </div>
           </div>
@@ -46,7 +44,7 @@
           </div>
 
         </div>
-
+</form>
     </div>
   </div>
   </form>

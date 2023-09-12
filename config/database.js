@@ -9,5 +9,5 @@ db.on('connected', function() {
 });
 
 
-require('../models/category')
+
 require('../models/recipe')

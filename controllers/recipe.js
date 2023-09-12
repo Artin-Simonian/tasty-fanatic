@@ -1,24 +1,45 @@
 
-const Category = require("../models/category");
+
 const Recipe = require('../models/recipe')
 
+module.exports = {
+  home,
+  show,
+  new: newRecipe,
+  create
+}
+
+async function home(req, res) {
+  const recipes = await Recipe.find({})
+      res.render('home', recipes );
+  
+}
+
+async function show(req, res) {
+  const recipe = await Recipe.findById(req.params.id);
+  res.render('recipes', { recipe });
+}
 
 
-exports.home = async(req, res) => {
+async function newRecipe(req, res)  {
+  res.render('/new' );
+}
+
+async function create(req, res) {
+  req.body.nowShowing = !!req.body.nowShowing;
+  req.body.cast = req.body.cast;
+
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key];
+  }
   try {
-    const limitNumber = 5;
-    const categories = await Category.find({}).limit(limitNumber);
-      res.render('index', { title: 'Cooking Blog - Home', categories } );
-  } catch (error) {
-    res.satus(500).send({message: error.message || "Error Occured" });
+    await Recipe.create(req.body);
+
+    res.redirect('/new'); 
+  } catch (err) {
+
+    console.log(err);
+    res.render('/new', { errorMsg: err.message });
   }
 }
 
-exports.submit = async(req, res) => {
-  res.render('submit', { title: 'Submit Recipe'} );
-}
-
-exports.submitPost = async(req, res) => {
-
-  res.redirect('/submit');
-}

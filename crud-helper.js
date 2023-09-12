@@ -23,12 +23,9 @@ require('dotenv').config();
 require('./config/database');
 
 // Require the app's Mongoose models
-const Category = require('./models/category');
 
 
 // Example CRUD
 
 // Top-level await (using await outside of an async function)
 // has been available since Node v14.8
-let categories = await Category.find({});
-console.log(categories);

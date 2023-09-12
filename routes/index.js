@@ -4,15 +4,19 @@ const passport = require('passport')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', {  categories:[] });
+  res.render('home');
 });
 
-router.get('/submit', function(req, res){
-  res.render('submit')
+router.get('/', function(req, res){
+  res.render('new')
 })
 
 router.get('/developer', function(req, res){
   res.render('developer')
+})
+
+router.get('/recipes', function(req, res){
+  res.render('recipes')
 })
 
 // Google OAuth login route
