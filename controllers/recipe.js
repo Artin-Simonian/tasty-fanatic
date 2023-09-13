@@ -1,24 +1,24 @@
 const Recipe = require("../models/recipe");
 
 module.exports = {
-  home,
+  index,
   show,
   new: newRecipe,
   create,
 };
 
-async function home(req, res) {
+async function index(req, res) {
   const recipes = await Recipe.find({});
   res.render("recipes/index", {recipes});
 }
 
 async function show(req, res) {
   const recipe = await Recipe.findById(req.params.id);
-  res.render("recipes", { recipe});
+  res.render("recipes/show", { recipe});
 }
 
 async function newRecipe(req, res) {
-  res.render("new");
+  res.render("recipes/new");
 }
 
 async function create(req, res) {

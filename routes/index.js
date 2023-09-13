@@ -4,16 +4,20 @@ const passport = require("passport");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("/");
+  res.render("index");
 });
 
-/*router.get("/new", function (req, res) {
-  res.render("new");
-});*/
+router.get("/new", function (req, res) {
+  res.render("recipes/new");
+});
 
 router.get("/developer", function (req, res) {
   res.render("developer");
 });
+
+router.get('/recipes', function(req, res){
+  res.render('recipes/show')
+})
 
 
 
