@@ -9,12 +9,12 @@ module.exports = {
 
 async function home(req, res) {
   const recipes = await Recipe.find({});
-  res.render("home", recipes);
+  res.render("home", {recipes});
 }
 
 async function show(req, res) {
   const recipe = await Recipe.findById(req.params.id);
-  res.render("recipes", { recipe });
+  res.render("recipes", { recipe});
 }
 
 async function newRecipe(req, res) {
