@@ -23,8 +23,9 @@ require('dotenv').config();
 require('./config/database');
 
 // Require the app's Mongoose models
-
-
+const Recipe = require('./models/recipe');
+let recipes = await Recipe.find({});
+console,log(recipes);
 // Example CRUD
 
 // Top-level await (using await outside of an async function)

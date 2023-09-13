@@ -1,13 +1,19 @@
 <%- include('../partials/header') %>
 
+<section class="px-4 my-5">
+  <h1>Recipe Name</h1>
+<%= recipe.name %> <br>
+<h1>Recipe Description</h1>
+<div style="white-space: pre-line;"><%= recipe.description %></div> <br>
+<h1>Ingredients</h1>
+<div style="white-space: pre-line;"><%= recipe.ingredients %></div>
+</section>
 
-
-
-<br><h2>Reviews</h2>
+<section class="px-4 my-5">
+<h2>Reviews</h2>
 <form id="add-review-form" method="POST"
   action="/recipes/<%= recipe._id %>/reviews">
-  <label>Review:</label>
-  <textarea name="content"></textarea>
+  <textarea name="content"></textarea><br>
   <label>Rating:</label>
   <select name="rating">
     <option value="1">1</option>
@@ -15,14 +21,19 @@
     <option value="3">3</option>
     <option value="4">4</option>
     <option value="5" selected>5</option>
-  </select>
+  </select><br><br>
   <input type="submit" value="Add Review">
 </form>
+</section >
+<section class="px-2 my-5">
+  <h2>Update Review</h2>
 <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
   <!-- Value attribute is being set to the comment's current text -->
-  <input name="text" value="<%= recipe.text %>">
-  <button type="submit">UPDATE COMMENT</button>
+  <input name="text" value="<%= recipe.text %>"><br><br>
+  <button type="submit">UPDATE REVIEW</button>
 </form>
+</section>
+<section id="review">
 <% if (recipe.reviews.length) { %>
   <table>
     <thead>
@@ -58,5 +69,5 @@
 <% } else { %>
   <h5>No Reviews Yet</h5>
 <% } %>
-
+</section>
 <%- include('../partials/footer') %>
