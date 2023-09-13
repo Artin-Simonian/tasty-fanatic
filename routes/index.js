@@ -13,9 +13,6 @@ router.get("/developer", function (req, res) {
   res.render("developer");
 });
 
-router.get('/recipes', function(req, res){
-  res.render('recipes/show')
-})
 
 
 
