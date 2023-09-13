@@ -1,16 +1,16 @@
 <%- include('../partials/header') %>
 
 <section class="px-4 my-5">
-  <h1>Recipe Name</h1>
+  <h3>Recipe Name</h3>
 <%= recipe.name %> <br>
-<h1>Recipe Description</h1>
+<h4>Recipe Description</h4>
 <div style="white-space: pre-line;"><%= recipe.description %></div> <br>
-<h1>Ingredients</h1>
+<h4>Ingredients</h4>
 <div style="white-space: pre-line;"><%= recipe.ingredients %></div>
 </section>
 
 <section class="px-4 my-5">
-<h2>Reviews</h2>
+<h4>Reviews</h4>
 <form id="add-review-form" method="POST"
   action="/recipes/<%= recipe._id %>/reviews">
   <textarea name="content"></textarea><br>
@@ -25,8 +25,8 @@
   <input type="submit" value="Add Review">
 </form>
 </section >
-<section class="px-2 my-5">
-  <h2>Update Review</h2>
+<section class="px-4 my-5">
+  <h4>Update Review</h4>
 <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
   <!-- Value attribute is being set to the comment's current text -->
   <input name="text" value="<%= recipe.text %>"><br><br>
@@ -34,6 +34,7 @@
 </form>
 </section>
 <section id="review">
+  <section class="px-4 my-5">
 <% if (recipe.reviews.length) { %>
   <table>
     <thead>
