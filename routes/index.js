@@ -4,7 +4,7 @@ const passport = require("passport");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("home");
+  res.render("/");
 });
 
 /*router.get("/new", function (req, res) {
@@ -17,9 +17,6 @@ router.get("/developer", function (req, res) {
 
 
 
-router.get("/recipes", function (req, res) {
-  res.render("recipes");
-});
 
 // Google OAuth login route
 router.get(
