@@ -16,7 +16,7 @@ require("./config/passport");
 
 var indexRouter = require("./routes/index");
 var recipeRouter = require("./routes/recipe");
-
+const reviewsRouter = require('./routes/reviews');
 var app = express();
 
 // view engine setup
@@ -51,6 +51,7 @@ app.use(function (req, res, next) {
 
 app.use("/", indexRouter);
 app.use("/recipes", recipeRouter);
+app.use('/', reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
