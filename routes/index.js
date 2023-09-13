@@ -7,13 +7,15 @@ router.get("/", function (req, res, next) {
   res.render("home");
 });
 
-router.get("/new", function (req, res) {
+/*router.get("/new", function (req, res) {
   res.render("new");
-});
+});*/
 
 router.get("/developer", function (req, res) {
   res.render("developer");
 });
+
+
 
 router.get("/recipes", function (req, res) {
   res.render("recipes");

@@ -4,20 +4,25 @@ const Schema = mongoose.Schema;
 const recipeSchema = new Schema({
   name: {
     type: String,
-    required: true,
   },
   description: {
     type: String,
-    required: true,
   },
   ingredients: {
     type: String,
-    required: true,
   },
   image: {
     type: String,
-    required: true,
   },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  userName: String,
+  userAvatar: String
+}, {
+  timestamps: true
 });
 
 module.exports = mongoose.model("Recipe", recipeSchema);

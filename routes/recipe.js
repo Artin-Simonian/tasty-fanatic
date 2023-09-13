@@ -7,7 +7,6 @@ router.get("/", recipeCtrl.home);
 router.get("/new", recipeCtrl.new);
 // GET /movies/:id (show functionality) MUST be below new route
 router.get("/:id", recipeCtrl.show);
-router.post("/", recipeCtrl.create);
 router.post("/", ensureLoggedIn, recipeCtrl.create);
 
 module.exports = router;

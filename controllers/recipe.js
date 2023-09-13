@@ -18,13 +18,12 @@ async function show(req, res) {
 }
 
 async function newRecipe(req, res) {
-  res.render("/new");
+  res.render("new");
 }
 
 async function create(req, res) {
-
+  req.body.user = req.user._id;
   //req.body.image = req.image._id;
-
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
     }
@@ -34,7 +33,7 @@ async function create(req, res) {
     res.redirect(`/recipes/${recipe._id}`);
   } catch (err) {
     console.log(err);
-    res.render("/new", { errorMsg: err.message });
+    res.render("new", { errorMsg: err.message });
   }
   
 }
