@@ -9,7 +9,7 @@ module.exports = {
 
 async function index(req, res) {
   const recipes = await Recipe.find({});
-  res.render("recipes/index", {recipes});
+  res.render("recipes/show", {recipes});
 }
 
 async function show(req, res) {

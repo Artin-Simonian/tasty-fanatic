@@ -4,12 +4,10 @@ const passport = require("passport");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index");
+  res.render("home");
 });
 
-router.get("/new", function (req, res) {
-  res.render("recipes/new");
-});
+
 
 router.get("/developer", function (req, res) {
   res.render("developer");
