@@ -2,34 +2,38 @@
 
 <section class="px-4 my-5">
   <h3>Recipe Name</h3>
-<%= recipe.name %> <br>
-<h4>Recipe Description</h4>
-<div style="white-space: pre-line;"><%= recipe.description %></div> <br>
-<h4>Ingredients</h4>
-<div style="white-space: pre-line;"><%= recipe.ingredients %></div>
+  <%= recipe.name %> <br />
+  <h4>Recipe Description</h4>
+  <div style="white-space: pre-line"><%= recipe.description %></div>
+  <br />
+  <h4>Ingredients</h4>
+  <div style="white-space: pre-line"><%= recipe.ingredients %></div>
 </section>
 
 <section class="px-4 my-5">
-<h4>Reviews</h4>
-<form id="add-review-form" method="POST"
-  action="/recipes/<%= recipe._id %>/reviews">
-  <textarea name="content"></textarea><br>
-  <label>Rating:</label>
-  <select name="rating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
-  </select><br><br>
-  <input class="btn btn-primary" type="submit" value="Add Review">
-</form>
-</section >
+  <h4>Reviews</h4>
+  <form
+    id="add-review-form"
+    method="POST"
+    action="/recipes/<%= recipe._id %>/reviews"
+  >
+    <textarea name="content"></textarea><br />
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option></select
+    ><br /><br />
+    <input class="btn btn-primary" type="submit" value="Add Review" />
+  </form>
+</section>
 <section class="px-4 my-5">
   <h4>Update Review</h4>
 </section>
-  <section class="px-4 my-5">
-<% if (recipe.reviews.length) { %>
+<section class="px-4 my-5">
+  <% if (recipe.reviews.length) { %>
   <table>
     <thead>
       <tr>
@@ -37,38 +41,47 @@
         <th>Date</th>
         <th>Review</th>
         <th>Rating</th>
-        <th></th>
+        <th>Delelte</th>
+        <th>Update</th>
       </tr>
     </thead>
     <tbody>
-      <% let total = 0 %>
-      <% recipe.reviews.forEach(function(r) { %>
-        <% total += r.rating %>
-        <tr>
-          <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
-          <td><%= r.createdAt.toLocaleDateString() %></td>
-          <td><%= r.content %></td>
-          <td><%= r.rating %></td>
-          <td>
-            <% if (user?._id.equals(r.user)) { %>
-              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-            <% } %>
-          </td>
-        </tr>
-        <section>
-        <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-          <textarea name="review" value="<%= r.review %>"></textarea><br><br>
-          <input  class="btn btn-primary" type="Submit" value="Submit">
-        </form>
-        </section>
+      <% let total = 0 %> <% recipe.reviews.forEach(function(r) { %> <% total +=
+      r.rating %>
+      <tr>
+        <td class="review-user">
+          <img
+            alt="avatar"
+            src="<%= r.userAvatar %>"
+            referrerpolicy="no-referrer"
+          /><%= r.userName %>
+        </td>
+        <td><%= r.createdAt.toLocaleDateString() %></td>
+        <td><%= r.content %></td>
+        <td><%= r.rating %></td>
+        <td>
+          <% if (user?._id.equals(r.user)) { %>
+          <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+            <button type="submit">X</button>
+          </form>
+          
+        </td>
+        <td>
+          <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+            <textarea name="content" value="<%= r.review %>"></textarea
+            ><br>
+            <input class="btn btn-primary" type="Submit" value="Submit" />
+          </form>
+        </td>
+        <% } %>
+      </tr>
+      <section>
+      </section>
       <% }); %>
-      
     </tbody>
   </table>
-<% } else { %>
+  <% } else { %>
   <h5>No Reviews Yet</h5>
-<% } %>
+  <% } %>
 </section>
 <%- include('../partials/footer') %>

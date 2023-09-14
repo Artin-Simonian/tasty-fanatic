@@ -8,21 +8,24 @@ module.exports = {
     update
   };
 
-  async function update(req, res) {
-    const recipe = await Recipe.findOne({'reviews._id': req.params.id});
+ 
 
-    const recipes = Recipe.reviews.id(req.params.id);
-    if (!recipes.user.equals(req.user._id)) return res.redirect(`/recipes/${recipe._id}`);
-    recipes.reviews = req.body.review;
+  async function update(req, res) {
+    const recipe = await Recipe.findOne({'reviews._id': req.params.id}); 
+    // const recipes = Recipe.reviews.id(req.params.id);  // Updated this line to the one below
+    const review = recipe.reviews.id(req.params.id);
+    // if (!recipes.user.equals(req.user._id)) return res.redirect(`/recipes/${recipe._id}`);  Updated below
+    if (!review.user.equals(req.user._id)) return res.redirect(`/recipes/${recipe._id}`);  // Updated below
+    // recipes.reviews = req.body.review;  // Updated below
+    review.content = req.body.content // input should have name="content" instead but using review
     try {
       await recipe.save();
     } catch (e) {
       console.log(e.message);
     }
-    // Redirect back to the book's show view
     res.redirect(`/recipes/${recipe._id}`);
   }
-
+  
   async function editReview(req, res) {
     const recipe = await Recipe.findOne({'reviews._id': req.params.id});
     const review = recipe.reviews.id(req.params.id);
