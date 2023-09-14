@@ -1,4 +1,3 @@
-
 <title>Recipes</title>
 <%- include('../partials/header') %>
 <table id="list">
@@ -10,12 +9,12 @@
   </thead>
   <tbody>
     <% recipes.forEach(function(m) { %>
-      <tr>
-        <td><%= m.name %></td>
-        <td><a href="/recipes/<%= m._id %>">Recipe</a></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
+    <tr>
+      <td><%= m.name %></td>
+      <td><a href="/recipes/<%= m._id %>">Recipe</a></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
 
-  <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

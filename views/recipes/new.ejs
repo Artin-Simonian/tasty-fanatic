@@ -1,8 +1,6 @@
 <title>Add Recipe</title>
 <%- include('../partials/header') %>
 
-
-
   <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">Submit Recipe</h1>
   </div>
@@ -11,19 +9,19 @@
     <div class="col-5">
       <form action="/recipes" method="POST">
         <div class="row g-3">
-
           <div class="col-12">
             <label for="name" class="form-label">Recipe Name</label>
-            <input type="text" name="name" id="name" class="form-control" placeholder="Recipe name...">
+            <input type="text" name="name" id="name" class="form-control" placeholder="Recipe name..." />
           </div>
 
           <div class="col-12">
             <label for="description" class="form-label">Description</label>
-            <textarea name="description" id="description" class="form-control" cols="30" rows="4" placeholder="Recipe Steps &#10;step 1&#10;step 2&#10;etc..."></textarea>
+            <textarea name="description" id="description" class="form-control" cols="30" rows="4"
+              placeholder="Recipe Steps &#10;step 1&#10;step 2&#10;etc..."></textarea>
           </div>
 
           <div class="col-12">
-            <label for="name" class="form-label">Ingredients</label><br>
+            <label for="name" class="form-label">Ingredients</label><br />
             <div class="ingredientList">
               <div class="ingredeintDiv mb-1">
                 <textarea name="ingredients" id="description" class="form-control" cols="30" rows="4"
@@ -32,19 +30,14 @@
             </div>
           </div>
 
-
-
-         
-
           <div class="cold-12">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
-
         </div>
       </form>
     </div>
   </div>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>

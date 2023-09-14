@@ -16,17 +16,11 @@
 // exit the REPL and reload this module
 
 
-// If the db connection string is in a .env file, we need 
-// to read in those env variables just like in server.js
+
 require('dotenv').config();
-// Connect to the database
 require('./config/database');
 
-// Require the app's Mongoose models
+
 const Recipe = require('./models/recipe');
 let recipes = await Recipe.find({});
 console,log(recipes);
-// Example CRUD
-
-// Top-level await (using await outside of an async function)
-// has been available since Node v14.8
