@@ -22,18 +22,12 @@
     <option value="4">4</option>
     <option value="5" selected>5</option>
   </select><br><br>
-  <input type="submit" value="Add Review">
+  <input class="btn btn-primary" type="submit" value="Add Review">
 </form>
 </section >
 <section class="px-4 my-5">
   <h4>Update Review</h4>
-<form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-  <!-- Value attribute is being set to the comment's current text -->
-  <input name="text" value="<%= recipe.text %>"><br><br>
-  <button type="submit">UPDATE REVIEW</button>
-</form>
 </section>
-<section id="review">
   <section class="px-4 my-5">
 <% if (recipe.reviews.length) { %>
   <table>
@@ -63,6 +57,12 @@
             <% } %>
           </td>
         </tr>
+        <section>
+        <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+          <textarea name="review" value="<%= r.review %>"></textarea><br><br>
+          <input  class="btn btn-primary" type="Submit" value="Submit">
+        </form>
+        </section>
       <% }); %>
       
     </tbody>

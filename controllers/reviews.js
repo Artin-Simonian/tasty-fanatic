@@ -4,8 +4,24 @@ module.exports = {
     create,
     // Add this export
     delete: deleteReview,
-    editReview
+    editReview,
+    update
   };
+
+  async function update(req, res) {
+    const recipe = await Recipe.findOne({'reviews._id': req.params.id});
+
+    const recipes = Recipe.reviews.id(req.params.id);
+    if (!recipes.user.equals(req.user._id)) return res.redirect(`/recipes/${recipe._id}`);
+    recipes.reviews = req.body.review;
+    try {
+      await recipe.save();
+    } catch (e) {
+      console.log(e.message);
+    }
+    // Redirect back to the book's show view
+    res.redirect(`/recipes/${recipe._id}`);
+  }
 
   async function editReview(req, res) {
     const recipe = await Recipe.findOne({'reviews._id': req.params.id});
