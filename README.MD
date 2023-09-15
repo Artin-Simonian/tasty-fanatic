@@ -3,6 +3,7 @@ Discover a culinary paradise on tastyfanatic where you can effortlessly upload y
 
 ## Links
 [Tastyfanatic](https://tasty-fanatic-199f0e5cac0f.herokuapp.com/) <br>
+[Trello](https://trello.com/b/5PBMiV5Z/project-2) <br>
 [Github](https://github.com/Artin-Simonian/tasty-fanatic.git)
 
 ## Screenshots
